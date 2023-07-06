@@ -51,7 +51,35 @@ namespace FirstApp
         }
     }
 
-    struct Animal
+    class Rectangle
+    {
+        public int a;
+        public int b;
+
+        public Rectangle()
+        {
+            a = 6;
+            b = 4;
+        }
+
+        public Rectangle(int a, int b)
+        {
+            this.a = a;
+            this.b = b;
+        }
+
+        public Rectangle(int c)
+        {
+            a = c;
+            b = c;
+        }
+
+        public int Square()
+        {
+            return a * b;
+        }
+    }
+        struct Animal
     {
         // Поля структуры
         public string type;
