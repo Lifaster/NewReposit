@@ -1,38 +1,190 @@
 ﻿using System;
 
-class Program
+namespace FirstApp
 {
-    static void Main(string[] args)
+    class Company
     {
-        double x1 = 3;
-        double y1 = 3;
-        double x2 = -3;
-        double y2 = 3;
+        public string Type;
+        public string Name;
+    }
 
-        double x3 = -9;
-        double y3 = 9;
-        double x4 = 9;
-        double y4 = 17;
+    class Department
+    {
+        public Company Company;
+        public City City;
+    }
 
-        double a1 = y2 - y1;
-        double b1 = x1 - x2;
-        double c1 = a1 * x1 + b1 * y1;
+    class City
+    {
+        public string Name;
+    }
+    enum TurnDirection
+    {
+        None = 0,
+        Left,
+        Right
+    }
 
-        double a2 = y4 - y3;
-        double b2 = x3 - x4;
-        double c2 = a2 * x3 + b2 * y3;
+    class Car
+    {
+        private double Fuel;
 
-        double deter = a1 * b2 - a2 * b1;
+        private int Mileage;
 
-        if (deter == 0)
+        private string color;
+
+        private TurnDirection turn;
+
+        public Car()
         {
-            Console.WriteLine("Прямые не пересекаются");
+            Fuel = 50;
+            Mileage = 0;
+            color = "White";
         }
-        else
+
+        private void Move()
         {
-            double x = (b2 * c1 - b1 * c2) / deter;
-            double y = (a1 * c2 - a2 * c1) / deter;
-            Console.WriteLine("Прямые пересекаются в точке ({0}, {1})", x, y);
+            // Move a kilometer
+            Mileage++;
+            Fuel -= 0.5;
+        }
+
+        private void Turn(TurnDirection direction)
+        {
+            turn = direction;
+        }
+
+        public void FillTheCar()
+        {
+            Fuel = 50;
+        }
+
+        public string GetColor()
+        {
+            return color;
+        }
+
+        public void ChangeColor(string newColor)
+        {
+            if (color != newColor)
+                color = newColor;
+        }
+
+        public bool IsTurningLeft()
+        {
+            return turn == TurnDirection.Left;
+        }
+
+        public bool IsTurningRight()
+        {
+            return turn == TurnDirection.Right;
+        }
+    }
+
+    class TrafficLight
+    {
+        private void ChangeColor(string color)
+        {
+
+        }
+        public string GetColor()
+        { 
+        }
+    }
+
+    class Bus
+    {
+        public int? Load;
+
+        public void PrintStatus()
+        {
+            if (Load.HasValue)
+            {
+                Console.WriteLine("В авбтобусе {0} пассажиров", Load.Value);
+            }
+            else
+            {
+                Console.WriteLine("Автобус пуст!");
+            }
+        }
+    }
+
+    class User
+    {
+        private int age;
+        private string login;
+        private string email;
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+
+            set
+            {
+                if (value < 18)
+                {
+                    Console.WriteLine("Возраст должен быть не меньше 18");
+                }
+                else
+                {
+                    age = value;
+                }
+            }
+        }
+        public string Login
+        {
+            get
+            {
+                return login;
+            }
+            set
+            {
+                if (value.Length < 3) 
+                {
+                    Console.WriteLine("Логин должен быть не менее 3 символов");
+                }
+                else
+                {
+                    login = value;
+                }
+            }
+        }
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                if (value.Contains("@") == true)
+                {
+                    email = value;
+                }
+                else
+                {
+                    Console.WriteLine("Неверный email.");
+                }
+            }
+        }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var department = GetCurrentDepartment();
+        }
+
+        static Department GetCurrentDepartment()
+        {
+            Department department = new Department();
+            string name;
+            if (department?.City?.Name == "Санкт-Петербург" && department?.Company?.Type == "Банк")
+            {
+                name = department?.Company?.Name ?? "Неизвестная компания";
+                Console.WriteLine("У банка {0} есть отделение в Санкт-Петербурге", name);
+            }
         }
     }
 }
