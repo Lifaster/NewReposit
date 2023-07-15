@@ -81,17 +81,6 @@ namespace FirstApp
         }
     }
 
-    class TrafficLight
-    {
-        private void ChangeColor(string color)
-        {
-
-        }
-        public string GetColor()
-        { 
-        }
-    }
-
     class Bus
     {
         public int? Load;
@@ -141,7 +130,7 @@ namespace FirstApp
             }
             set
             {
-                if (value.Length < 3) 
+                if (value.Length < 3)
                 {
                     Console.WriteLine("Логин должен быть не менее 3 символов");
                 }
@@ -169,22 +158,18 @@ namespace FirstApp
                 }
             }
         }
-    class Program
-    {
-        static void Main(string[] args)
+    }
+        class Program
         {
-            var department = GetCurrentDepartment();
-        }
-
-        static Department GetCurrentDepartment()
-        {
-            Department department = new Department();
-            string name;
-            if (department?.City?.Name == "Санкт-Петербург" && department?.Company?.Type == "Банк")
+            static void Main(string[] args)
             {
-                name = department?.Company?.Name ?? "Неизвестная компания";
-                Console.WriteLine("У банка {0} есть отделение в Санкт-Петербурге", name);
+                User user = new User();
+
+                user.Age = 23;
+                user.Email = "uogdsjh@o";
+                Console.WriteLine(user.Age);
+
+                Console.ReadKey();
             }
         }
     }
-}
