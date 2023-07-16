@@ -2,46 +2,20 @@
 
 namespace FirstApp
 {
-    class Employee
+    class Obj
     {
-        public string Name;
-        public int Age;
-        public int Salary;
-    }
+        private string name;
+        private string owner;
+        private int length;
+        private int count;
 
-    class ProjectManager: Employee
-    { 
-        public string ProjectName;
-    }
-
-    class Developer : Employee
-    { 
-        public string ProgrammingLanguage; 
-    }
-
-    class Food
-    {
-    }
-    class Fruit: Food
-    {
-    }
-    class Vegetable: Food
-    {
-    }
-    class Apple: Fruit
-    {
-    }
-    class Banana : Fruit
-    {
-    }
-    class Pear : Fruit
-    {
-    }
-    class Potato: Vegetable
-    {
-    }
-    class Carrot: Vegetable
-    {
+        public Obj(string name, string ownerName, int objLength, int count)
+        {
+            this.name = name;
+            this.owner = ownerName;
+            this.length = objLength;
+            this.count = count;
+        }
     }
     class Program
         {
