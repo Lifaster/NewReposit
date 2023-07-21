@@ -2,24 +2,27 @@
 
 namespace FirstApp
 {
-    class Obj
+    class IndexingClass
     {
-        public int Value;
+        private int[] array;
 
-        public static Obj operator +(Obj a, Obj b)
+        public IndexingClass(int[] array)
         {
-            return new Obj
-            {
-                Value = a.Value + b.Value
-            };
+            this.array = array;
         }
-        public static Obj operator -(Obj a, Obj b)
+        public int this[int index]
         {
-            return new Obj
+            get
             {
-                Value = a.Value - b.Value
-            };
+                return array[index];
+            }
+
+            private set
+            {
+                array[index] = value;
+            }
         }
+
     }
     class Program
         {
@@ -27,4 +30,4 @@ namespace FirstApp
             {
             }
         }
-    }
+}
