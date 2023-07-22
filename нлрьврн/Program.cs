@@ -2,28 +2,27 @@
 
 namespace FirstApp
 {
-    class IndexingClass
+    abstract class ComputerPart
     {
-        private int[] array;
-
-        public IndexingClass(int[] array)
-        {
-            this.array = array;
-        }
-        public int this[int index]
-        {
-            get
-            {
-                return array[index];
-            }
-
-            private set
-            {
-                array[index] = value;
-            }
-        }
-
+        public abstract void Work();
     }
+
+    class Processor: ComputerPart
+    {
+        public override void Work()
+        {
+        
+        }
+    }
+    class MotherBoard : ComputerPart
+    {
+        public override void Work()
+        {
+
+        }
+    }
+
+
     class Program
         {
             static void Main(string[] args)
