@@ -21,7 +21,13 @@ namespace FirstApp
 
         }
     }
+    class GraphicCard : ComputerPart
+    {
+        public override void Work()
+        {
 
+        }
+    }
 
     class Program
         {
