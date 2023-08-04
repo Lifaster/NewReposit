@@ -1,32 +1,13 @@
 ﻿using System;
+using System.Net.NetworkInformation;
 
 namespace FirstApp
 {
-    abstract class ComputerPart
+    class obj
     {
-        public abstract void Work();
-    }
-
-    class Processor: ComputerPart
-    {
-        public override void Work()
-        {
-        
-        }
-    }
-    class MotherBoard : ComputerPart
-    {
-        public override void Work()
-        {
-
-        }
-    }
-    class GraphicCard : ComputerPart
-    {
-        public override void Work()
-        {
-
-        }
+        public string Name;
+        public object Description;
+        public static int MaxValue = 2000;
     }
 
     class Program
