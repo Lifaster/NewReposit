@@ -5,7 +5,7 @@ namespace FirstApp
 {
     class Helper
     {
-        static void Swap(ref int num1, ref int num2)
+        public static void Swap(ref int num1, ref int num2)
         {
             int num3;
             num3 = num1;
