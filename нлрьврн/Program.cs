@@ -3,14 +3,20 @@ using System.Net.NetworkInformation;
 
 namespace FirstApp
 {
-    class Helper
+    class Obj
     {
-        public static void Swap(ref int num1, ref int num2)
+        public string Name;
+        public string Description;
+
+        public static string Parent;
+        public static int DaysInWeek;
+        public static int MaxValue;
+
+        static Obj()
         {
-            int num3;
-            num3 = num1;
-            num1 = num2;
-            num2 = num3; 
+            Parent = "System.Object";
+            DaysInWeek = 7;
+            MaxValue = 2000;
         }
     }
 
@@ -18,13 +24,6 @@ namespace FirstApp
     {
         static void Main(string[] args)
         {
-            int num1 = 3;
-            int num2 = 58;
-
-            Helper.Swap(ref num1, ref num2);
-
-            Console.WriteLine(num1); //58
-            Console.WriteLine(num2); //3
         }
     }
 }
