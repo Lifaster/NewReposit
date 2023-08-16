@@ -3,15 +3,11 @@ using System.Net.NetworkInformation;
 
 namespace FirstApp
 {
-    class Car<T>
+    class Record<T1, T2>
     {
-        public T Engine;
-    }
-    class GasEngine
-    {
-    }
-    class ElectricEngine
-    {
+        public T1 id;
+        public T2 value;
+        public DateTime Date;
     }
 
     class Program
