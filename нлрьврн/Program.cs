@@ -3,7 +3,7 @@ using System.Net.NetworkInformation;
 
 namespace FirstApp
 {
-    static class int
+    static class gu
     {
             public static int GetNegative(this int num)
             {   
