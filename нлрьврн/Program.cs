@@ -6,7 +6,7 @@ namespace FirstApp
     class Car<T>
     {
         public T Engine;
-        public iv
+        public virtual void ChangePart<T2>(T2 NewPart) { }
     }
     class GasEngine
     {
