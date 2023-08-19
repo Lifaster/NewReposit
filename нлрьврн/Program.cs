@@ -3,20 +3,20 @@ using System.Net.NetworkInformation;
 
 namespace FirstApp
 {
-    class Car<T>
+    class Car<T1> where T1 : Engine
     {
-        public T Engine;
-        public virtual void ChangePart<T2>(T2 NewPart) { }
+        public T1 Engine;
+
+        public virtual void ChangePart<T2>(T2 newPart) where T2 : CarPart
+        {
+        }
     }
-    class GasEngine
-    {
-    }
-    class ElectricEngine
-    {
-    }
-    class Battery { }
-    class Differential { }
-    class Wheel { }
+    class ElectricEngine : Engine { }
+    class GasEngine : Engine { }
+    class CarPart { }
+    class Battery : CarPart { }
+    class Differential : CarPart { }
+    class Wheel : CarPart { }
 
 
     class Program
