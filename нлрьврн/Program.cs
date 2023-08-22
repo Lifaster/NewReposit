@@ -3,22 +3,32 @@ using System.Net.NetworkInformation;
 
 namespace FirstApp
 {
-    class Car<TEngine> where TEngine : Engine
+    abstract class Car<TEngine> where TEngine : Engine
     {
         public TEngine Engine;
-
-        public virtual void ChangePart<TCarPart>(TCarPart newPart) where TCarPart : CarPart
-        {
-        }
+        public abstract void ChangePart<TCarPart>(TCarPart newPart) where TCarPart : CarPart
     }
-    class Engine { }
+    abstract class Engine { }
     class ElectricEngine : Engine { }
     class GasEngine : Engine { }
-    class CarPart { }
+    abstract class CarPart { }
     class Battery : CarPart { }
     class Differential : CarPart { }
     class Wheel : CarPart { }
+    class ElectricCar : Car<ElectricEngine>
+    {
+        public override void ChangePart<TPart>(TPart newPart)
+        {
 
+        }
+    }
+    class GasCar : Car<GasEngine>
+    {
+        public override void ChangePart<TPart>(TPart newPart)
+        {
+
+        }
+    }
 
     class Program
     {
